@@ -1,0 +1,44 @@
+.div1 {
+  width: 10px;
+  height: 10px;
+  background: url(./img/pic.png) center center no-repeat;
+  background-size: cover;
+
+  /*
+  transition-property: height;
+  transition-duration: 0.3s;
+  transition-delay: 0s;
+  transition-timing-function: cubic-bezier(.57,.12,.91,1.56); 
+  */
+  /* 生成网站http://cubic-bezier.com/#.57,.12,.91,1.56 */
+
+  transition: width 0.3s cubic-bezier(0.57, 0.12, 0.91, 1.56),
+    height 0.3s 0.3s cubic-bezier(0.57, 0.12, 0.91, 1.56);
+}
+
+.div1:hover {
+  width: 100px;
+  height: 100px;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.div2 {
+  font: bold 200% Consolas, Monaco, monospace;
+  border-right: 0.1em solid;
+  width: 30ch;
+  margin: 2em 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 20s steps(30),
+    blink-caret 0.5s step-end infinite alternate;
+}
